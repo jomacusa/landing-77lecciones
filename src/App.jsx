@@ -30,7 +30,6 @@ function App() {
         </h2>
 
         <div className="space-y-8">
-          {/* Beneficio 1 */}
           <div className="flex items-start gap-3">
             <svg xmlns="http://www.w3.org/2000/svg" className="w-5 h-5 text-[#b91c1c] mt-1 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3}>
               <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
@@ -45,7 +44,6 @@ function App() {
             </div>
           </div>
 
-          {/* Beneficio 2 */}
           <div className="flex items-start gap-3">
             <svg xmlns="http://www.w3.org/2000/svg" className="w-5 h-5 text-[#b91c1c] mt-1 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3}>
               <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
@@ -60,7 +58,6 @@ function App() {
             </div>
           </div>
 
-          {/* Beneficio 3 */}
           <div className="flex items-start gap-3">
             <svg xmlns="http://www.w3.org/2000/svg" className="w-5 h-5 text-[#b91c1c] mt-1 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3}>
               <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
@@ -110,39 +107,29 @@ function App() {
               Además, al comprarlo quedarás suscrito gratuitamente para recibir reflexiones mensuales sobre liderazgo espiritual.
             </p>
 
-            <div className="flex flex-col items-center space-y-2">
-              {/* Botón de PayPal Sandbox */}
-              <form
-                action="https://www.sandbox.paypal.com/ncp/payment/ELDQNGA37JCR2"
-                method="post"
-                target="_blank"
-                className="flex flex-col items-center"
-              >
-                <input
-                  type="hidden"
-                  name="return"
-                  value="http://localhost:5173/gracias"
-                />
-                <input
-                  type="submit"
-                  value="Comprar ahora por $3.50 USD"
-                  className="bg-dorado text-verdeOscuro font-semibold px-6 py-4 rounded-2xl shadow-md text-lg hover:scale-105 transition-transform cursor-pointer"
-                />
-                <img
-                  src="https://www.paypalobjects.com/images/Debit_Credit_APM.svg"
-                  alt="Métodos de pago"
-                  className="h-12 md:h-14 w-auto mt-2"
-                />
-              </form>
-              <div className="text-xs text-gray-600 mt-1">
-                Con la tecnología de{' '}
-                <img
-                  src="https://www.paypalobjects.com/paypal-ui/logos/svg/paypal-wordmark-color.svg"
-                  alt="PayPal"
-                  className="inline h-4 align-middle"
-                />
-              </div>
-            </div>
+            <form
+              action="https://www.paypal.com/cgi-bin/webscr"
+              method="post"
+              target="_blank"
+              className="flex flex-col items-center gap-2"
+            >
+              <input type="hidden" name="cmd" value="_s-xclick" />
+              <input type="hidden" name="hosted_button_id" value="9FYUYKAHWY2R4" />
+              <input type="hidden" name="currency_code" value="USD" />
+              <input type="hidden" name="return" value="https://www.77lecciones.com/gracias" />
+
+              <input
+                type="submit"
+                value="Comprar ahora por $3.50 USD"
+                className="bg-dorado text-verdeOscuro font-semibold px-6 py-4 rounded-2xl shadow-md text-lg hover:scale-105 transition-transform cursor-pointer"
+              />
+
+              <img
+                src="/logos-pago.png"
+                alt="Métodos de pago"
+                className="h-12 md:h-14 w-auto max-w-sm"
+              />
+            </form>
           </div>
 
           {/* Mockup limpio */}
@@ -153,6 +140,7 @@ function App() {
               className="w-full"
             />
           </div>
+
         </div>
       </section>
 
